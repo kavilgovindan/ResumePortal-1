@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>resumeportal-candidatepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--bootstrap 4.5-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--css and javascript files-->
+  <link rel="stylesheet" href="./CandidateDetailStyle.css">
+  <script src="./CandidateDetail.js"></script>
+  <!--fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+  <!--navgation bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+          <img src="https://www.majesticpeopleinfotech.com/wp-content/themes/majestic/img/logo.png" alt="Logo" style="width:200px;">
+          
+        </a>
+        <span class="page-title">HR Portal</span>
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Dashborad</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Add candidate</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+        </ul>
+      </nav>
+
+<!--dashborad view -->
+
+<!--left side component or serach component -->
+<div class="container-fluid">
+<div class="row">
+  <div class="left" style="background-color:#f1f1f1;">
+    
+    <form>
+      <div>
+          <input id="Search" name="Search" type="text" placeholder="Search ..." class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="location1" class="control-label ">Role</label>
+            <select class="form-control" name="" id="location1">
+                <option value="">All</option>
+                <option value="">Android</option>
+                <option value="">PHP</option>
+                <option value="">Ios</option>
+                <option value="">Dot net</option>
+                <option value="">Angular</option>
+            </select>
+      </div>
+      <div class="form-group">
+          <label for="exp" class="control-label">Years of Exp</label>
+          <input id="exp" name="exp" type="text" placeholder="Exp in Year" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="exp" class="control-label">Minimum Salary</label>
+          <input id="exp" name="exp" type="text" placeholder="P.A" class="form-control">
+      </div>              
+      <div class="form-group">
+          <label for="exp" class="control-label" style="padding: 0 auto;">Maximum Salary</label>
+          <input id="exp" name="exp" type="text" placeholder="P.A" class="form-control">
+      </div>
+      <button class="btn btn-primary"><a href=""></a>Search</button>
+  </form>
+  </div>
+
+  <!--right side or detail view component-->
+  <div class="right">
+    <div>
+      <span class="sub-title">Candidate Details</span>
+      <button type="button" class="btn btn-info float-right" style="margin:5px 50px 0px 0px;"><i class="fas fa-print"></i> print</button>
+      <button type="button" class="btn btn-danger float-right" style="margin:5px 50px 0px 0px;"><i class="fas fa-download"></i> download</button>
+    </div>
+    
+    <div class="container-fluid" style="padding: 20px 0 20px 0;">
+      <div class="row main-details">
+        <span class="col-md-3">Candidate Id</span>
+        <span class="col-md-3">: MPI0001</span>
+      </div>
+      <div class="row main-details">
+        <span class="col-md-3">Candidate name</span>
+        <span class="col-md-3">: Ajith k</span>
+      </div>
+      <div class="row main-details">
+        <span class="col-md-3">Role applied</span>
+        <span class="col-md-3">: dotnet developer</span>
+      </div>
+      <div class="row main-details">
+        <span class="col-md-3">Interview status</span>
+        <span class="col-md-3">: Selected</span>
+      </div>
+    </div>
+    <div class="tabset">
+      <!-- Tab 1 btn -->
+      <input type="radio" name="tabset" id="tab1" aria-controls="personal details" checked>
+      <label for="tab1">Personal details</label>
+      <!-- Tab 2 btn -->
+      <input type="radio" name="tabset" id="tab2" aria-controls="Official details">
+      <label for="tab2">Official details</label>
+      <!-- Tab 3 btn -->
+      <input type="radio" name="tabset" id="tab3" aria-controls="Others">
+      <label for="tab3">Others</label>
+      <button type="button" class="btn btn-primary float-right" id="edit-btn"><i class="fas fa-edit"></i></button>
+      <!--tab panels-->
+      <div class="tab-panels">
+        <section id="personal-details" class="tab-panel">
+          <div class="row main-details ">
+            <div class="col-md-3">
+              <span>Gender:</span>
+            </div>
+            <div class="col-md-3">
+              <span>male</span>
+            </div>
+          </div>
+          <div class="row main-details ">
+            <div class="col-md-3">
+              <span>Email id:</span>
+            </div>
+            <div class="col-md-3">
+              <span>ajith007@gmail.com</span>
+            </div>
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+             <span>Mobile Number:</span>
+            </div>
+            <div class="col-md-3">
+              <span>9788776655</span>
+            </div>
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Date Of Birth:</span>
+            </div>
+            <div class="col-md-3">
+              <span>02/02/1998</span>
+            </div>
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Current Location:</span>
+            </div>
+            <div class="col-md-3">
+              <span>chennai</span>
+            </div>
+          </div>
+         
+      </section>
+        <section id="official-details" class="tab-panel">
+          <div class="row main-details ">
+            <div class="col-md-3">
+              <span>Job applied for:</span>
+            </div>
+            <div class="col-md-3">
+              <span>dotnet developer</span>
+            </div>
+            <div class="col-md-3">
+              <span>years of experience:</span>
+             </div>
+             <div class="col-md-3">
+               <span>55 years 10 months</span>
+             </div>            
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Current salary:</span>
+            </div>
+            <div class="col-md-3">
+              <span>771998</span>
+            </div>
+            <div class="col-md-3">
+              <span>Expected salary:</span>
+            </div>
+            <div class="col-md-3">
+              <span>7000000</span>
+            </div>
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Current company:</span>
+            </div>
+            <div class="col-md-3">
+              <span>googleee</span>
+            </div>
+            <div class="col-md-3">
+              <span>Qualification:</span>
+            </div>
+            <div class="col-md-3">
+              <span>B.E EEE</span>
+            </div>
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Technical skills:</span>
+            </div>
+            <div class="col-md-3">
+              <span>javascript ,python, php,c# c++,html,css,angular,react,firebase,node.js,git,version control system</span>
+            </div>
+            <div class="col-md-3">
+              <span>Notice period:</span>
+            </div>
+            <div class="col-md-3">
+              <span>5 months</span>
+            </div>
+          </div>
+
+        </section>
+        <section id="others" class="tab-panel">
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Soft skills:</span>
+            </div>
+            <div class="col-md-3">
+              <span>report management ,team handling, ms office, Teaching,giving seminors</span>
+            </div> 
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Communication level:</span>
+            </div>
+            <div class="col-md-3">
+              <span>intermidate</span>
+            </div>
+          </div>
+          <div class="row main-details">
+            <div class="col-md-3">
+              <span>Comments:</span>
+            </div>
+            <div class="col-md-3">
+              <span>he is such a bad guys doesnt give up that easy he will be the bad programmer every one could know</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+    </div>      
+  </div>
+</div>
+</div>
+</body>
+</html>

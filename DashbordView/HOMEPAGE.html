@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>NAV-SEARCH</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+        /* CONTAINER*/ 
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .row.content {height: 1000px}
+        
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+        
+        
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {height:auto;} 
+        }
+
+        /* NAVIGATION BAR */
+
+        .modal-login {
+            width: 320px;
+        }
+
+        .modal-header {
+            background-color: #f1f1f1;
+        }
+
+        .modal-body {
+            background-color: #f1f1f1;
+        }
+
+        .modal-footer{
+            background-color: #f1f1f1;        
+        }
+            
+        .modal-login .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+            
+        .navbar-header {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+        .navbar-brand img {
+            width: 250px;
+            height: 40px;
+            
+        }
+        
+        .navbar-inverse {
+            height: 70px;
+        }
+        
+        .container-fluid {
+            padding: auto;
+        }
+
+        .navbar-right{
+            padding-top: 10px;
+        }
+
+        /* SEARCH BAR */
+        
+        .form-horizontal .form-group {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+        @media screen and (min-width: 768px) {
+            #adv-search {
+                width: 300px;
+                margin: 0 auto;
+            }
+        }    
+        
+        /* CANDIDATE PREVIEW */
+
+        small{font-size:.5em}
+        .table-row{border-radius:3px;padding:25px 30px;display:flex;justify-content:space-between;margin-bottom:20px;margin-top: 15px; margin-right: 30px;}
+        .table-row{background-color:#fff;box-shadow:0 0 9px 0 rgba(0,0,0,.1)}
+        .col-1{flex-basis:30%}
+        .col-2{flex-basis:20%}
+        .col-3{flex-basis:20%}
+        .col-4{flex-basis:2%}
+        .col-5{flex-basis:2%}
+        @media all and (max-width:767px){
+        .table-header{display:none}
+        .table-row{display:block}
+        .col{flex-basis:100%;display:flex;padding:10px 0}
+        .col:before{color:#6C7A89;padding-right:10px;content:attr(data-label);flex-basis:50%;text-align:right}
+        }
+
+
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="https://www.majesticpeopleinfotech.com/wp-content/themes/majestic/img/logo.png">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">DASHBOARD</a></li>
+                        <li><a href="#myModal" class="trigger-btn" data-toggle="modal">ADD CANDIDATE</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <form action="#" method="post">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-center">ADD CANDIDATE</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>EMAIL</label>
+                                <input type="email" class="form-control" placeholder="enter email">
+                            </div>
+                            <div class="form-group">
+                                <label>MOBILE NUMBER</label>
+                                <input type="text" class="form-control" placeholder="enter mobile number">
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <input type="submit" id="submitbtn" class="btn btn-primary" value="SUBMIT">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+        <div class="container-fluid text-center">    
+            <div class="row content">
+                <div class="col-sm-3 sidenav">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <input id="Search" name="Search" type="text" placeholder="Search ..." class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="location1" class="control-label">Role</label>
+                            <select class="form-control" name="" id="role">
+                                <option value="">All</option>
+                                <option value="">Android</option>
+                                <option value="">PHP</option>
+                                <option value="">Ios</option>
+                                <option value="">Dot net</option>
+                                <option value="">Angular</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location1" class="control-label">Interview Status</label>
+                            <select class="form-control" name="" id="status">
+                                <option value="">Selected</option>
+                                <option value="">Candidate in Progress</option>
+                                <option value="">Rejected</option>
+                                <option value="">..</option>
+                                <option value="">..</option>
+                                <option value="">..</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exp" class="control-label">Years of Experience</label>
+                            <div class="input-group">
+                                <input type="text" id="exp" class="form-control" placeholder="min">
+                                <span class="input-group-btn" style="width: 50px;" ></span>
+                                <input type="text" id="exp" class="form-control" placeholder="max">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pricefrom" class="control-label">Min Salary</label>
+                            <div class="input-group">
+                              <div class="input-group-addon" id="basic-addon1">$</div>
+                              <input type="text" class="form-control" id="pricefrom" placeholder="Per Annum">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="priceto" class="control-label">Max Salary</label>
+                            <div class="input-group">
+                              <div class="input-group-addon" id="basic-addon2">$</div>
+                              <input type="text" class="form-control" id="priceto"  placeholder="Per Annum">
+                            </div>
+                        </div>    
+                        <button class="btn btn-primary"><a href=""></a>Search</button>
+                    </form>      
+                </div>
+                <div class="col-sm-9">
+                    <ul class="responsive-table ">
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Id">Candidate ID: MPI001</div>
+                            <div class="col col-2" data-label="Name">John Doe</div>
+                            <div class="col col-3" data-label="Date">01/30/2020</div>
+                            <div class="col col-4" data-label="btn1">
+                                <a href="" class="glyphicon glyphicon-eye-open"></a>
+                            </div>
+                            <div class="col col-5" data-label="btn">
+                                <a href="" class="glyphicon glyphicon-edit"></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="pagination pagination-sm-3">
+                        <li class="page-item text-center">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

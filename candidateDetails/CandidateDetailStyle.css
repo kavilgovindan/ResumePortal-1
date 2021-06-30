@@ -1,0 +1,167 @@
+
+body {
+  font-family: 'Roboto',Arial, Helvetica, sans-serif;
+  position: relative;
+}
+*,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 25%;
+  padding: 15px 5px;
+}
+
+.left h2 {
+  padding-left: 15px;
+  
+}
+
+/* Right column (page content) */
+.right {
+  flex: 75%;
+  padding: 15px;
+  margin-right: inherit;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+.float-right {
+  float: right;
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+a.navbar-brand::after{
+    content: "";
+    padding: 0px 10px 10px 0px;
+    border-right: 2px solid lightgrey;
+}
+
+span.page-title {
+    font-size: 1.5rem;
+    color: white;
+    padding-top: 5px;
+}
+
+a.nav-link {
+    margin-right: 30px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+/*tabs in the candidate detail page*/
+.main-details{
+    padding: 3px 0;
+}
+
+span.sub-title{
+  font-size: x-large;
+}
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color: #06c;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background: #06c;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+  }
+  section.tab-panel {
+    margin-top: -8px;
+}
+  
+  .tabset {
+    max-width: 65em;
+  }
+  #edit-btn{
+    margin: 20px 50px 0px 0px;
+  }
