@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Portal login</title>
+  <link rel="stylesheet" href="./loginview.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ </head>
+<body>
+  <div class="content">
+    <img src="https://www.majesticpeopleinfotech.com/wp-content/themes/majestic/img/logo.png" alt="" srcset="">
+    <div class="login-title">Resume Portal</div>
+  </div>
+  <div class="content">
+    <!-- Nav pills -->
+    <ul class="nav nav-pills" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#regis">Register</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="login" class="container tab-pane active">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">User name</label>
+            <input type="text" class="form-control" id="username" placeholder="username" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+          </div>
+             <button type="button" class="btn btn-primary" id="login-btn">Submit</button>        
+        </form>
+      </div>
+      <div id="regis" class="container tab-pane fade">
+        <form>
+          <div class="form-group">
+            <label for ="user">
+              Username:
+            </label>
+            <input type="text" name="username" id="usernames" required class="form-control">
+            <small id="usercheck" class="form-text invalid-feedback alert-text">
+                **Username is missing
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email address</label>
+            <input type="email" class="form-control" required name="email" id="email" placeholder="name@example.com" >
+            <span id="emailvalid" class="form-text invalid-feedback alert-text">enter valid email id</span>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" class="form-control" name="pass" id="password" required placeholder="Password" >
+            <small id="passcheck" class="form-text invalid-feedback alert-text">*Please Fill the password</small>
+          </div>
+          <div class="form-group">
+            <label for="registerPasswordVer">Verify Password</label>
+            <input type="password" class="form-control" name="username" id="conpassword" required placeholder="Password" >
+            <small id="conpasscheck" class="form-text invalid-feedback alert-text">*Password didn't match</small>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitbtnRegiter" value="Submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--script links-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./loginview.js"></script>
+</body>
+</html>
