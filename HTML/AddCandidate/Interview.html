@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Details</title>
+    <link rel="stylesheet" href="Addcandidate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="Validation.js"></script>
+</head>
+<body>
+  <!--Navigation bar-->
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">DASHBOARD</a></li>
+                <li class="active"><a href="#">INTERVIEW DETAILS</a></li>
+                <li><a href="#myModal" class="trigger-btn" data-toggle="modal">ADD CANDIDATE</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Interview Details-->
+    <div class="container">
+      <h3 id="heading"><center>INTERVIEW DETAILS</center></h3><br><br>
+        <div class="col-md-offset-3">
+        <form  id="interview" name="interview" class="form-horizontal" action="#">
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="id">Candidate ID<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-5">
+            <input type="text" class="form-control" name="id" id="id"><span class="error" id="error-id"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="hr">HR Name<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-5">
+            <input type="text" class="form-control" name="hr" id="hr"><span class="error" id="error-hr"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="iname">Interviewer Name<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-5">
+            <input type="text" class="form-control" name="iname" id="iname"><span class="error" id="error-iname"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="status">Interview Status<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-5">
+              <select class="form-control" name="status" id="status">
+                <option>-- Select --</option>
+                <option>Screening Selected</option>
+                <option>Screening Rejected</option>
+                <option>Candidate Inprocess</option>
+                <option>Hold</option>
+                <option>Selected</option>
+                <option>Rejected</option>
+              </select><span class="error" id="error-status"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="commun">Communication Level</label></div>
+            <div class="col-md-4 col-sm-5">
+              <select class="form-control" name="commun" id="commun">
+                <option>-- Select --</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Bad</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="idate">Interviewed Date</label></div>
+            <div class="col-md-4 col-sm-5">
+            <input type="date" class="form-control" name="idate" id="idate"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="technical">Technical Interview Rating</label></div>
+            <div class="col-md-4 col-sm-5">
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="5">5 star</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="4">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="3">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="2">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="1">1 stars</label>
+              </div>
+            </div>
+            </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="hrcmt">HR Comments</label></div>
+            <div class="col-md-4 col-sm-5">
+            <textarea class="form-control" type="text" name="hrcmt" id="hrcmt" rows="4"></textarea></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-5">
+            <label class="control-label" for="tic">Technical Interview Comments</label></div>
+            <div class="col-md-4 col-sm-5">
+            <textarea class="form-control" type="text" name="tic" id="tic" rows="4"></textarea></div>
+          </div>
+          <div class="col-md-offset-7">
+            <button type="button" class="btn btn-primary" id="subbtn" value="Submit" name="Submit">Submit</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Addcandidate Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Addcandidate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="Validation.js"></script>
+</head>
+
+<body>
+  <!--Navigation bar-->
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">DASHBOARD</a></li>
+                <li><a href="Interview.html">INTERVIEW DETAILS</a></li>
+                <li class="active"><a href="#">ADD CANDIDATE</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  
+    <!--Tabs-->
+  <div class="container">
+    <h3><center>ADD CANDIDATE DETAILS</center></h3><br>
+  <ul class="nav nav-pills nav-justified">
+    <li id="tab1"  class="active"><a data-toggle="pill" href="#personal">Personal Details</a></li>
+    <li id="tab2"><a  data-toggle="pill" href="#professional">Professional Details</a></li>
+  </ul><br><br>
+  </div>
+
+    <!--Personal Details Tab-->
+
+  <div class="tab-content">
+
+    <div id="personal" class="tab-pane fade in active">
+      <div class="container">
+        <form id="frm1" name="form1" class="form-horizontal" action="#" method="post">
+          <div class="form-group">
+            <div class="col-md-2 col-sm-2">
+            <label class="control-label" for="name">Candidate Name<span class="required">*</span></label></div>
+            <div class="col-md-3 col-sm-3">
+            <input class="form-control" type="text" name="name" id="name"><span class="error" id="error-name"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-sm-2">
+            <label class="control-label" for="mail">Email ID<span class="required">*</span></label></div>
+            <div class="col-md-3 col-sm-3">
+            <input class="form-control" type="email" name="mail" id="mail"><span class="error" id="error-mail"></span></div>
+            <span id="error-name"></span>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-sm-2">
+            <label class="control-label" for="mno">Mobile No<span class="required">*</span></label></div>
+            <div class="col-md-3 col-sm-3">
+            <input class="form-control" type="text" name="mno" id="mno"><span class="error" id="error-mno"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-sm-2">
+            <label class="control-label">Gender</label></div>
+            <div class="col-md-1 col-sm-1">
+            <input type="radio" name="gender" value="Male" id="male">
+            <label class="control-label" for="male">Male</label></div>
+            <div class="col-md-1 col-sm-1">
+              <input type="radio" name="gender"  value="female" id="female">
+              <label class="control-label" for="female">Female</label>
+            </div>
+            <div class="col-md-1 col-sm-1">
+              <input type="radio" name="gender" value="others" id="others">
+              <label class="control-label" for="others">Others</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-sm-2">
+            <label class="control-label" for="dob">Date Of Birth</label></div>
+            <div class="col-md-3 col-sm-3">
+            <input class="form-control" type="date" name="dob" id="dob"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2 col-sm-2">
+            <label class="control-label" for="location">Current Location</label></div>
+            <div class="col-md-3 col-sm-3">
+            <input class="form-control"  type="text"name="location" id="location"></div>
+            </div>
+          <div class="col-md-offset-4"><a href="#professional">
+            <button type="button" class="btn btn-primary" id="nxtbtn" value="submit" name="NEXT">Submit</button></a>
+          </div>
+        </form>     
+      </div>
+    </div>
+
+      <!--Professional Details Tab-->
+    
+    <div id="professional" class="tab-pane fade">
+      <div class="container">
+        <div class="col-md-offset-2">
+        <form class="form-horizontal" name="form2" id="frm2" action="#" method="post">
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="job">Job Applied For<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-4">
+              <select class="form-control" name="job" id="job">
+                <option>-- Select --</option>
+                <option>Dotnet</option>
+                <option>PHP</option>
+                <option>SQL</option>
+                <option>Python</option>
+                <option>Andriod</option>
+                <option>Java</option>
+                <option>C</option>
+                <option>C++</option>
+                <option>ios</option>
+                <option>Oracle</option>
+                <option>mongo DB</option>
+              </select>
+              <span class="error" id="error-job"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="exp">Year Of Experience<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-4">
+              <input class="form-control" type="text" id="exp" name="exp"><span class="error" id="error-exp"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="sal">Current Salary</label></div>
+            <div class="col-md-4 col-sm-4">
+            <input class="form-control" type="text" id="sal" name="sal" placeholder="Current Salary"><span class="error" id="error-sal"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="esal">Expected Salary</label></div>
+            <div class="col-md-4 col-sm-4">
+            <input class="form-control" type="text" id="esal" name="esal"><span class="error" id="error-esal"></span></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="period">Notice Period</label></div>
+            <div class="col-md-4 col-sm-4">
+              <select class="form-control" id="period" name="period">
+                <option>-- Select --</option>
+                <option>Immediate</option>
+                <option>Currently Surviving</option>
+                <option>15 days</option>
+                <option>1 Month</option>
+                <option>2 Month</option>
+                <option>3 Month</option>
+                <option>More than 3 Months</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="company">Current Company</label></div>
+            <div class="col-md-4 col-sm-4">
+            <input class="form-control" type="text" name="company" id="company"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="degree">Degree</label></div>
+            <div class="col-md-4 col-sm-4">
+            <input class="form-control" type="text"name="degree" id="degree"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="skills">Skills</label></div>
+            <div class="col-md-4 col-sm-4">
+            <input class="form-control" type="text"name="skills" id="skills" placeholder="ex: Dotnet, PHP, Python,..etc"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-3 col-sm-4">
+            <label class="control-label" for="resume">Resume<span class="required">*</span></label></div>
+            <div class="col-md-4 col-sm-4">
+            <input class="form-control" type="file" name="resume" id="resume"><span class="error" id="error-resume"></span></div>
+          </div>
+          <div class="col-md-offset-6">
+            <button type="button" class="btn btn-primary" id="nxtbtn2" value="Submit" name="Submit">Submit</button>
+          </div>
+        </form>
+        </div>
+        </div>
+      </div>
+
+  </div>
+</body>
+</html>
